@@ -1,0 +1,291 @@
+
+/*
+  PROYECTO: TECNOSTORE SENATI
+  PROGRAMADOR: 2
+  ARCHIVO: css/estilos.css
+
+  Objetivo:
+  Dar una apariencia profesional a la
+  página creada por el Programador 1.
+*/
+
+/* ===================================
+   1. COLORES DEL PROYECTO
+=================================== */
+
+:root {
+    --azul: #0754a1;
+    --azul-oscuro: #07376b;
+    --celeste: #eaf4ff;
+    --blanco: #ffffff;
+    --fondo: #f5f7fb;
+    --texto: #26364b;
+}
+
+/* ===================================
+   2. CONFIGURACIÓN GENERAL
+=================================== */
+
+/* Controlamos el tamaño de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Suavizamos el desplazamiento del menú */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos generales de la página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* ===================================
+   3. ENCABEZADO
+=================================== */
+
+header {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    padding: 25px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 15px;
+    font-size: 30px;
+}
+
+/* ===================================
+   4. MENÚ DE NAVEGACIÓN
+=================================== */
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* Diseño de los enlaces */
+nav a {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+/* Efecto al pasar el mouse */
+nav a:hover {
+    background-color: var(--azul);
+}
+
+/* Resaltado al navegar con teclado */
+nav a:focus-visible,
+.bienvenida a:focus-visible {
+    outline: 3px solid #ffc857;
+    outline-offset: 3px;
+}
+
+/* ===================================
+   5. CONTENIDO PRINCIPAL
+=================================== */
+
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 25px 20px;
+}
+
+/* ===================================
+   6. SECCIÓN DE BIENVENIDA
+=================================== */
+
+.bienvenida {
+    background: linear-gradient(
+        135deg,
+        var(--azul),
+        var(--azul-oscuro)
+    );
+
+    color: var(--blanco);
+    padding: 65px 30px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.bienvenida h2 {
+    font-size: 34px;
+    margin-top: 0;
+}
+
+.bienvenida p {
+    max-width: 650px;
+    margin: 15px auto 28px;
+    font-size: 18px;
+}
+
+/* Botón Ver productos */
+.bienvenida a {
+    display: inline-block;
+    background-color: var(--blanco);
+    color: var(--azul-oscuro);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.bienvenida a:hover {
+    background-color: var(--celeste);
+}
+
+/* ===================================
+   7. SECCIONES DEL SITIO
+=================================== */
+
+section {
+    margin-bottom: 35px;
+}
+
+section h2 {
+    text-align: center;
+}
+
+#productos {
+    padding-top: 20px;
+}
+
+/* ===================================
+   8. CATÁLOGO DE PRODUCTOS
+=================================== */
+
+/* Grid permite organizar las tarjetas */
+.lista-productos {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+
+    gap: 22px;
+}
+
+/* ===================================
+   9. TARJETAS DE PRODUCTOS
+=================================== */
+
+.producto {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 12px;
+
+    border: 1px solid #dfe6ee;
+
+    box-shadow: 0 4px 12px
+        rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+/* Título de cada producto */
+.producto h3 {
+    color: var(--azul);
+    margin-top: 0;
+    font-size: 21px;
+}
+
+/* Precio del producto */
+.producto p:last-child {
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    font-size: 18px;
+}
+
+/* ===================================
+   10. NOSOTROS Y CONTACTO
+=================================== */
+
+#nosotros,
+#contacto {
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+#nosotros p,
+#contacto p {
+    text-align: center;
+}
+
+/* ===================================
+   11. PIE DE PÁGINA
+=================================== */
+
+footer {
+    background-color: var(--azul-oscuro);
+    color: var(--blanco);
+    text-align: center;
+    padding: 22px;
+}
+
+/* ===================================
+   12. DISEÑO RESPONSIVO
+=================================== */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .bienvenida {
+        padding: 40px 18px;
+    }
+
+    .bienvenida h2 {
+        font-size: 26px;
+    }
+
+    .bienvenida p {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+}
+
+/* Reducimos animaciones si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .producto {
+        transition: none;
+    }
+}
